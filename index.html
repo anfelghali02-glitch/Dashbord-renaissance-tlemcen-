@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renaissance Tlemcen - Dashboard Pro Luxe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            background: "#0a1128",
+            foreground: "#f8fafc",
+            card: "#0f172a",
+            primary: "#bda25b",
+            "primary-light": "#d1b873",
+            muted: "#1e293b",
+            "muted-foreground": "#94a3b8",
+            border: "#1e293b"
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+            serif: ['Cinzel', 'serif'],
+            mono: ['Geist Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Geist+Mono&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="h-screen w-screen overflow-hidden flex flex-col bg-background text-foreground">
+  <!-- Main content -->
+  <main class="flex-1 overflow-hidden grid grid-cols-[57%_1px_43%] gap-0 p-3" style="min-height: 0;">
+
+    <!-- LEFT COLUMN -->
+    <div class="flex flex-col gap-3 min-h-0 overflow-hidden">
+      <!-- Events Section -->
+      <div class="flex-[0_0_60%] min-h-0 overflow-hidden">
+        <section class="h-full flex flex-col gap-2 overflow-hidden">
+          <div class="flex items-center gap-3 flex-none">
+            <div class="w-7 h-7 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
+              <i data-feather="calendar" class="w-4 h-4 text-primary"></i>
+            </div>
+            <h2 class="font-serif font-bold text-lg text-primary tracking-widest uppercase">Evenements</h2>
+            <div class="flex-1 h-px bg-gradient-to-r from-primary/30 to-transparent"></div>
+          </div>
+          <div class="flex-1 grid grid-cols-2 grid-rows-2 gap-2 min-h-0" id="events-container">
+            <!-- Event 1 -->
+            <div
+              class="group relative flex rounded-xl border border-primary/20 bg-card-60 glass overflow-hidden hover:border-primary/40 transition-colors">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-primary/60 to-primary/20">
+              </div>
+              <div class="flex-1 flex flex-col justify-between p-3 pl-4 min-w-0">
+                <span class="text-sm font-bold tracking-wider text-primary/80 uppercase truncate">Famille
+                  Benali</span>
+                <p class="font-serif text-xl font-bold text-foreground leading-snug line-clamp-2">Mariage</p>
+                <div class="flex flex-col gap-0.5 mt-auto">
+                  <div class="flex items-center gap-1.5 text-muted-foreground">
+                    <i data-feather="clock" class="w-4 h-4 text-primary/50 flex-none"></i>
+                    <span class="text-sm">4 Mai 2026 - 18:00</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 text-muted-foreground">
+                    <i data-feather="map-pin" class="w-4 h-4 text-primary/50 flex-none"></i>
+                    <span class="text-sm truncate">Salle des Fetes</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-none w-28 flex items-center justify-center p-2 bg-primary/5 border-l border-primary/10">
+                <div
+                  class="w-24 h-24 rounded-lg border-2 border-dashed border-primary/30 bg-primary/5 flex items-center justify-center">
+                  <span class="text-xs text-primary/40 font-bold">LOGO</span>
+                </div>
+              </div>
+            </div>
+            <!-- Event 2 -->
+            <div
+              class="group relative flex rounded-xl border border-primary/20 bg-card-60 glass overflow-hidden hover:border-primary/40 transition-colors">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-primary/60 to-primary/20">
+              </div>
+              <div class="flex-1 flex flex-col justify-between p-3 pl-4 min-w-0">
+                <span
+                  class="text-sm font-bold tracking-wider text-primary/80 uppercase truncate">Sonatrach</span>
+                <p class="font-serif text-xl font-bold text-foreground leading-snug line-clamp-2">Conference Internationale</p>
+                <div class="flex flex-col gap-0.5 mt-auto">
+                  <div class="flex items-center gap-1.5 text-muted-foreground">
+                    <i data-feather="clock" class="w-4 h-4 text-primary/50 flex-none"></i>
+                    <span class="text-sm">5 Mai 2026 - 09:00</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 text-muted-foreground">
+                    <i data-feather="map-pin" class="w-4 h-4 text-primary/50 flex-none"></i>
+                    <span class="text-sm truncate">Centre de Conferences</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-none w-28 flex items-center justify-center p-2 bg-primary/5 border-l border-primary/10">
+                <div
+                  class="w-24 h-24 rounded-lg border-2 border-dashed border-primary/30 bg-primary/5 flex items-center justify-center">
+                  <span class="text-xs text-primary/40 font-bold">LOGO</span>
+                </div>
+              </div>
+            </div>
+            <!-- Event 3 -->
+            <div
+              class="group relative flex rounded-xl border border-primary/20 bg-card-60 glass overflow-hidden hover:border-primary/40 transition-colors">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-primary/60 to-primary/20">
+              </div>
+              <div class="flex-1 flex flex-col justify-between p-3 pl-4 min-w-0">
+                <span class="text-sm font-bold tracking-wider text-primary/80 uppercase truncate">Chambre de
+                  Commerce</span>
+                <p class="font-serif text-xl font-bold text-foreground leading-snug line-clamp-2">Gala Annuel</p>
+                <div class="flex flex-col gap-0.5 mt-auto">
+                  <div class="flex items-center gap-1.5 text-muted-foreground">
+                    <i data-feather="clock" class="w-4 h-4 text-primary/50 flex-none"></i>
+                    <span class="text-sm">6 Mai 2026 - 20:00</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 text-muted-foreground">
+                    <i data-feather="map-pin" class="w-4 h-4 text-primary/50 flex-none"></i>
+                    <span class="text-sm truncate">Grand Ballroom</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-none w-28 flex items-center justify-center p-2 bg-primary/5 border-l border-primary/10">
+                <div
+                  class="w-24 h-24 rounded-lg border-2 border-dashed border-primary/30 bg-primary/5 flex items-center justify-center">
+                  <span class="text-xs text-primary/40 font-bold">LOGO</span>
+                </div>
+              </div>
+            </div>
+            <!-- Event 4 -->
+            <div
+              class="group relative flex rounded-xl border border-primary/20 bg-card-60 glass overflow-hidden hover:border-primary/40 transition-colors">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-primary/60 to-primary/20">
+              </div>
+              <div class="flex-1 flex flex-col justify-between p-3 pl-4 min-w-0">
+                <span class="text-sm font-bold tracking-wider text-primary/80 uppercase truncate">Djezzy</span>
+                <p class="font-serif text-xl font-bold text-foreground leading-snug line-clamp-2">Seminaire Leadership</p>
+                <div class="flex flex-col gap-0.5 mt-auto">
+                  <div class="flex items-center gap-1.5 text-muted-foreground">
+                    <i data-feather="clock" class="w-4 h-4 text-primary/50 flex-none"></i>
+                    <span class="text-sm">7 Mai 2026 - 10:00</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 text-muted-foreground">
+                    <i data-feather="map-pin" class="w-4 h-4 text-primary/50 flex-none"></i>
+                    <span class="text-sm truncate">Salle Andalousie</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-none w-28 flex items-center justify-center p-2 bg-primary/5 border-l border-primary/10">
+                <div
+                  class="w-24 h-24 rounded-lg border-2 border-dashed border-primary/30 bg-primary/5 flex items-center justify-center">
+                  <span class="text-xs text-primary/40 font-bold">LOGO</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Flights Section -->
+      <div class="flex-1 min-h-0 overflow-hidden">
+        <section class="h-full flex flex-col gap-2 overflow-hidden">
+          <div class="flex items-center gap-3 flex-none">
+            <div class="w-7 h-7 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
+              <i data-feather="send" class="w-4 h-4 text-primary transform -rotate-45"></i>
+            </div>
+            <h2 class="font-serif font-bold text-lg text-primary tracking-widest uppercase">Vols (Tlemcen)</h2>
+            <span class="text-xs text-muted-foreground font-mono">TLM</span>
+            <div class="flex-1 h-px bg-gradient-to-r from-primary/30 to-transparent"></div>
+            <span id="flight-source-badge"
+              class="text-[9px] px-2 py-0.5 rounded-full border font-semibold text-primary/70 border-primary/30 bg-primary/10">LIVE</span>
+            <span id="flight-last-update" class="text-[10px] text-muted-foreground tabular-nums font-mono">--:--</span>
+            <button onclick="renderFlights()"
+              class="w-6 h-6 rounded-md bg-primary/10 border border-primary/20 flex items-center justify-center text-primary/60 hover:text-primary hover:bg-primary/20 transition-colors">
+              <i data-feather="refresh-cw" class="w-3 h-3"></i>
+            </button>
+          </div>
+          <div
+            class="flex-1 min-h-0 flex flex-col rounded-xl border border-primary/20 bg-card/60 backdrop-blur-sm overflow-hidden">
+            <div
+              class="grid grid-cols-[70px_1fr_1.2fr_110px_90px] gap-x-3 px-3 py-2 border-b border-primary/20 bg-primary/5 flex-none">
+              <span class="text-[9px] font-bold tracking-widest text-primary/80 uppercase">VOL</span>
+              <span class="text-[9px] font-bold tracking-widest text-primary/80 uppercase">COMPAGNIE</span>
+              <span class="text-[9px] font-bold tracking-widest text-primary/80 uppercase">DESTINATION</span>
+              <span class="text-[9px] font-bold tracking-widest text-primary/80 uppercase">DATE & HEURE</span>
+              <span class="text-[9px] font-bold tracking-widest text-primary/80 uppercase text-center">STATUT</span>
+            </div>
+            <div class="flex-1 flex flex-col min-h-0 overflow-y-auto" id="flights-container">
+              <!-- Flight 1 -->
+              <div
+                class="flex-1 grid grid-cols-[70px_1fr_1.2fr_110px_90px] gap-x-3 items-center px-3 border-b border-border/20 bg-transparent">
+                <span class="font-mono text-xs text-foreground font-semibold tracking-wide">DAH1098</span>
+                <span class="text-xs text-muted-foreground truncate">Air Algérie</span>
+                <span class="flex items-center gap-2 text-xs text-foreground">
+                  <i data-feather="arrow-right" class="w-3 h-3 text-primary/50 flex-none"></i>
+                  <span class="truncate">Lyon (Dép.)</span>
+                  <span class="text-[10px] text-muted-foreground/60">(LYS)</span>
+                </span>
+                <span class="font-mono text-[11px] text-foreground tabular-nums font-medium">06 Mai 08:50</span>
+                <span
+                  class="text-[9px] px-2 py-0.5 rounded-full border font-semibold text-center text-emerald-400 bg-emerald-400/10 border-emerald-400/30">Prévu</span>
+              </div>
+              <!-- Flight 2 -->
+              <div
+                class="flex-1 grid grid-cols-[70px_1fr_1.2fr_110px_90px] gap-x-3 items-center px-3 border-b border-border/20 bg-primary/[0.02]">
+                <span class="font-mono text-xs text-foreground font-semibold tracking-wide">DAH1099</span>
+                <span class="text-xs text-muted-foreground truncate">Air Algérie</span>
+                <span class="flex items-center gap-2 text-xs text-foreground">
+                  <i data-feather="arrow-right" class="w-3 h-3 text-primary/50 flex-none"></i>
+                  <span class="truncate">Lyon (Arr.)</span>
+                  <span class="text-[10px] text-muted-foreground/60">(LYS)</span>
+                </span>
+                <span class="font-mono text-[11px] text-foreground tabular-nums font-medium">06 Mai 13:55</span>
+                <span
+                  class="text-[9px] px-2 py-0.5 rounded-full border font-semibold text-center text-emerald-400 bg-emerald-400/10 border-emerald-400/30">Prévu</span>
+              </div>
+              <!-- Flight 3 -->
+              <div
+                class="flex-1 grid grid-cols-[70px_1fr_1.2fr_110px_90px] gap-x-3 items-center px-3 border-b border-border/20 bg-transparent">
+                <span class="font-mono text-xs text-foreground font-semibold tracking-wide">DAH6117</span>
+                <span class="text-xs text-muted-foreground truncate">Air Algérie</span>
+                <span class="flex items-center gap-2 text-xs text-foreground">
+                  <i data-feather="arrow-right" class="w-3 h-3 text-primary/50 flex-none"></i>
+                  <span class="truncate">Alger (Dép.)</span>
+                  <span class="text-[10px] text-muted-foreground/60">(ALG)</span>
+                </span>
+                <span class="font-mono text-[11px] text-foreground tabular-nums font-medium">06 Mai 15:15</span>
+                <span
+                  class="text-[9px] px-2 py-0.5 rounded-full border font-semibold text-center text-emerald-400 bg-emerald-400/10 border-emerald-400/30">Prévu</span>
+              </div>
+              <!-- Flight 4 -->
+              <div
+                class="flex-1 grid grid-cols-[70px_1fr_1.2fr_110px_90px] gap-x-3 items-center px-3 border-b border-border/20 bg-primary/[0.02]">
+                <span class="font-mono text-xs text-foreground font-semibold tracking-wide">TVF7298</span>
+                <span class="text-xs text-muted-foreground truncate">Transavia</span>
+                <span class="flex items-center gap-2 text-xs text-foreground">
+                  <i data-feather="arrow-right" class="w-3 h-3 text-primary/50 flex-none"></i>
+                  <span class="truncate">Paris Orly (Arr.)</span>
+                  <span class="text-[10px] text-muted-foreground/60">(ORY)</span>
+                </span>
+                <span class="font-mono text-[11px] text-foreground tabular-nums font-medium">06 Mai 17:55</span>
+                <span
+                  class="text-[9px] px-2 py-0.5 rounded-full border font-semibold text-center text-emerald-400 bg-emerald-400/10 border-emerald-400/30">Prévu</span>
+              </div>
+              <!-- Flight 5 -->
+              <div
+                class="flex-1 grid grid-cols-[70px_1fr_1.2fr_110px_90px] gap-x-3 items-center px-3 border-b border-border/20 bg-transparent">
+                <span class="font-mono text-xs text-foreground font-semibold tracking-wide">TVF7299</span>
+                <span class="text-xs text-muted-foreground truncate">Transavia</span>
+                <span class="flex items-center gap-2 text-xs text-foreground">
+                  <i data-feather="arrow-right" class="w-3 h-3 text-primary/50 flex-none"></i>
+                  <span class="truncate">Paris Orly (Dép.)</span>
+                  <span class="text-[10px] text-muted-foreground/60">(ORY)</span>
+                </span>
+                <span class="font-mono text-[11px] text-foreground tabular-nums font-medium">06 Mai 19:15</span>
+                <span
+                  class="text-[9px] px-2 py-0.5 rounded-full border font-semibold text-center text-emerald-400 bg-emerald-400/10 border-emerald-400/30">Prévu</span>
+              </div>
+              <!-- Flight 6 -->
+              <div
+                class="flex-1 grid grid-cols-[70px_1fr_1.2fr_110px_90px] gap-x-3 items-center px-3 border-b border-border/20 bg-primary/[0.02]">
+                <span class="font-mono text-xs text-foreground font-semibold tracking-wide">DAH1287</span>
+                <span class="text-xs text-muted-foreground truncate">Air Algérie</span>
+                <span class="flex items-center gap-2 text-xs text-foreground">
+                  <i data-feather="arrow-right" class="w-3 h-3 text-primary/50 flex-none"></i>
+                  <span class="truncate">Paris Orly (Arr.)</span>
+                  <span class="text-[10px] text-muted-foreground/60">(ORY)</span>
+                </span>
+                <span class="font-mono text-[11px] text-foreground tabular-nums font-medium">06 Mai 20:38</span>
+                <span
+                  class="text-[9px] px-2 py-0.5 rounded-full border font-semibold text-center text-emerald-400 bg-emerald-400/10 border-emerald-400/30">Prévu</span>
+              </div>
+              <!-- Flight 7 -->
+              <div
+                class="flex-1 grid grid-cols-[70px_1fr_1.2fr_110px_90px] gap-x-3 items-center px-3 border-b border-border/20 bg-transparent last:border-b-0">
+                <span class="font-mono text-xs text-foreground font-semibold tracking-wide">VOE2679</span>
+                <span class="text-xs text-muted-foreground truncate">Volotea</span>
+                <span class="flex items-center gap-2 text-xs text-foreground">
+                  <i data-feather="arrow-right" class="w-3 h-3 text-primary/50 flex-none"></i>
+                  <span class="truncate">Marseille (Dép.)</span>
+                  <span class="text-[10px] text-muted-foreground/60">(MRS)</span>
+                </span>
+                <span class="font-mono text-[11px] text-foreground tabular-nums font-medium">06 Mai 21:10</span>
+                <span
+                  class="text-[9px] px-2 py-0.5 rounded-full border font-semibold text-center text-emerald-400 bg-emerald-400/10 border-emerald-400/30">Prévu</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- CENTER DIVIDER -->
+    <div class="bg-primary/20 self-stretch mx-3"></div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="flex flex-col gap-3 min-h-0 overflow-hidden">
+      <!-- Instagram Section -->
+      <div class="flex-[0_0_60%] min-h-0 overflow-hidden">
+        <section class="h-full flex flex-col gap-2 overflow-hidden">
+          <div class="flex items-center gap-3 flex-none">
+            <div
+              class="w-7 h-7 rounded-lg bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center">
+              <i data-feather="instagram" class="w-4 h-4 text-white"></i>
+            </div>
+            <h2 class="font-serif font-bold text-lg text-primary tracking-widest uppercase">@renaissancetlemcenhotel</h2>
+            <div class="flex-1 h-px bg-gradient-to-r from-primary/30 to-transparent"></div>
+            <div class="flex items-center gap-1.5" id="insta-dots">
+              <button onclick="changeInstaPost(0)"
+                class="rounded-full transition-all duration-300 w-5 h-2 bg-primary"></button>
+              <button onclick="changeInstaPost(1)"
+                class="rounded-full transition-all duration-300 w-2 h-2 bg-primary/30 hover:bg-primary/50"></button>
+              <button onclick="changeInstaPost(2)"
+                class="rounded-full transition-all duration-300 w-2 h-2 bg-primary/30 hover:bg-primary/50"></button>
+              <button onclick="changeInstaPost(3)"
+                class="rounded-full transition-all duration-300 w-2 h-2 bg-primary/30 hover:bg-primary/50"></button>
+            </div>
+          </div>
+          <div id="insta-post"
+            class="flex-1 min-h-0 rounded-xl border border-primary/20 overflow-hidden relative transition-opacity duration-500 opacity-100">
+            <img id="insta-img" src="public/insta-1.jpg.png" alt="Instagram post"
+              class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0"
+              style="background: linear-gradient(to top, rgba(10,17,40,0.95) 0%, rgba(10,17,40,0.6) 35%, transparent 60%)">
+            </div>
+            <div
+              class="absolute top-4 left-4 flex items-center gap-2 bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+              <i data-feather="instagram" class="w-4 h-4 text-white"></i>
+              <span class="text-sm text-white font-medium">@renaissancetlemcenhotel</span>
+            </div>
+            <div
+              class="absolute top-4 right-4 bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+              <span id="insta-counter" class="text-sm text-white tabular-nums font-mono">1 / 4</span>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-5">
+              <p id="insta-caption" class="text-base text-white leading-relaxed mb-4 line-clamp-2 text-pretty">Decouvrez
+                notre nouvelle suite royale avec vue panoramique sur les monts de Tlemcen.</p>
+              <div class="flex items-center gap-6">
+                <span class="flex items-center gap-2">
+                  <i data-feather="heart" class="w-5 h-5 text-red-400 fill-red-400"></i>
+                  <span id="insta-likes" class="text-base font-semibold text-white">1.2K</span>
+                </span>
+                <span class="flex items-center gap-2">
+                  <i data-feather="message-circle" class="w-5 h-5 text-white/70"></i>
+                  <span id="insta-comments" class="text-base text-white/70">89</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Weather Section -->
+      <div class="flex-1 min-h-0 overflow-hidden">
+        <section class="h-full flex flex-col gap-2 overflow-hidden">
+          <div class="flex items-center gap-3 flex-none">
+            <div class="w-6 h-6 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
+              <i data-feather="globe" class="w-3 h-3 text-primary"></i>
+            </div>
+            <h2 class="font-serif font-bold text-base text-primary tracking-widest uppercase">Heure dans le Monde</h2>
+            <div class="flex-1 h-px bg-gradient-to-r from-primary/30 to-transparent"></div>
+          </div>
+          <div class="grid grid-cols-2 gap-2 flex-none" id="clocks-container">
+            <!-- Populated by script -->
+          </div>
+
+          <div class="flex items-center gap-3 flex-none mt-1">
+            <div class="w-6 h-6 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
+              <i data-feather="thermometer" class="w-3 h-3 text-primary"></i>
+            </div>
+            <h2 class="font-serif font-bold text-base text-primary tracking-widest uppercase">Meteo Tlemcen</h2>
+            <div class="flex-1 h-px bg-gradient-to-r from-primary/30 to-transparent"></div>
+          </div>
+
+          <div class="flex-1 flex items-center gap-3 p-4 rounded-xl border border-primary/20 bg-card/60 min-h-0">
+            <div id="weather-current-icon" class="flex-none">
+              <div class="w-16 h-16"><i data-feather="sun" class="text-amber-400" style="width:100%;height:100%"></i>
+              </div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[10px] uppercase tracking-widest text-muted-foreground mb-0.5">Aujourd'hui</p>
+              <div class="flex items-baseline gap-1.5">
+                <span id="weather-temp" class="font-serif text-5xl font-bold text-foreground leading-none">24</span>
+                <span id="weather-feels" class="text-2xl text-muted-foreground">/25°</span>
+              </div>
+              <p id="weather-label" class="text-sm text-primary mt-0.5 font-medium truncate">Ensoleillé</p>
+            </div>
+            <div class="flex flex-col gap-2 text-right">
+              <div class="flex items-center justify-end gap-1.5">
+                <i data-feather="droplet" class="w-4 h-4 text-blue-400"></i>
+                <span id="weather-humidity" class="text-sm text-muted-foreground tabular-nums">45%</span>
+              </div>
+              <div class="flex items-center justify-end gap-1.5">
+                <i data-feather="wind" class="w-4 h-4 text-primary/60"></i>
+                <span id="weather-wind" class="text-sm text-muted-foreground tabular-nums">12 km/h</span>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer ticker -->
+  <footer
+    class="flex-none flex items-center h-9 px-4 border-t border-primary/20 bg-card/80 backdrop-blur-sm overflow-hidden">
+    <div class="relative flex-1 overflow-hidden">
+      <div class="flex animate-scroll" id="footer-ticker">
+        <span class="whitespace-nowrap text-sm text-muted-foreground tracking-wide px-4">Bienvenue au Renaissance
+          Tlemcen Hotel • Wi-Fi gratuit disponible - reseau : Renaissance_Guest •Spa & Wellness Center • Conciergerie
+          24h/24 a votre service • Navette aeroport disponible sur demande</span>
+        <span class="whitespace-nowrap text-sm text-muted-foreground tracking-wide px-4">Bienvenue au Renaissance
+          Tlemcen Hotel • Wi-Fi gratuit disponible - reseau : Renaissance_Guest • Restaurant Le Palmier ouvert de 06h a
+          23h • Spa & Wellness Center - Reservation au poste 1234 • Conciergerie 24h/24 a votre service • Navette
+          aeroport disponible sur demande</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
